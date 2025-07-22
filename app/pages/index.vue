@@ -7,48 +7,51 @@
     </div>
 
     <!-- Stats Cards -->
-    <div class="grid grid-cols-1 gap-4 mb-6">
+    <div class="space-y-4 mb-6">
       <!-- Coins -->
       <UCard>
         <div class="flex items-center justify-between">
           <div class="flex items-center space-x-3">
-            <div class="p-2 bg-yellow-100 rounded-lg">
-              <UIcon name="i-heroicons-currency-dollar" class="w-6 h-6 text-yellow-600" />
+            <div class="p-3 bg-yellow-100 rounded-lg">
+              <UIcon name="i-heroicons-currency-dollar" class="w-8 h-8 text-yellow-600" />
             </div>
             <div>
               <p class="text-sm text-gray-600">Xu hiện tại</p>
-              <p class="text-2xl font-bold text-gray-900">{{ gameStore.coins.toLocaleString() }}</p>
+              <p class="text-xl font-bold text-gray-900">{{ gameStore.coins.toLocaleString() }}</p>
             </div>
           </div>
         </div>
       </UCard>
 
-      <!-- Skills and Hints Row -->
-      <div class="grid grid-cols-2 gap-4">
-        <!-- Skills -->
-        <UCard>
-          <div class="text-center">
-            <div class="p-2 bg-blue-100 rounded-lg w-fit mx-auto mb-2">
-              <UIcon name="i-heroicons-star" class="w-6 h-6 text-blue-600" />
+      <!-- Skills -->
+      <UCard>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-3">
+            <div class="p-3 bg-blue-100 rounded-lg">
+              <UIcon name="i-heroicons-star" class="w-8 h-8 text-blue-600" />
             </div>
-            <p class="text-sm text-gray-600">Năng Lực Số</p>
-            <p class="text-xl font-bold text-gray-900">{{ gameStore.skillsCount }}</p>
-            <p class="text-xs text-gray-500">chưa sử dụng</p>
+            <div>
+              <p class="text-sm text-gray-600">Năng Lực Số</p>
+              <p class="text-xl font-bold text-gray-900">{{ gameStore.skillsCount }} <span class="text-sm font-normal text-gray-500">chưa sử dụng</span></p>
+            </div>
           </div>
-        </UCard>
+        </div>
+      </UCard>
 
-        <!-- Hints -->
-        <UCard>
-          <div class="text-center">
-            <div class="p-2 bg-green-100 rounded-lg w-fit mx-auto mb-2">
-              <UIcon name="i-heroicons-puzzle-piece" class="w-6 h-6 text-green-600" />
+      <!-- Hints -->
+      <UCard>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-3">
+            <div class="p-3 bg-green-100 rounded-lg">
+              <UIcon name="i-heroicons-puzzle-piece" class="w-8 h-8 text-green-600" />
             </div>
-            <p class="text-sm text-gray-600">Mảnh Dữ Liệu</p>
-            <p class="text-xl font-bold text-gray-900">{{ gameStore.hintsCount }}</p>
-            <p class="text-xs text-gray-500">đã thu thập</p>
+            <div>
+              <p class="text-sm text-gray-600">Mảnh Dữ Liệu</p>
+              <p class="text-xl font-bold text-gray-900">{{ gameStore.hintsCount }} <span class="text-sm font-normal text-gray-500">đã thu thập</span></p>
+            </div>
           </div>
-        </UCard>
-      </div>
+        </div>
+      </UCard>
     </div>
 
     <!-- Quick Actions -->
