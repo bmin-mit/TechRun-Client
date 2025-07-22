@@ -1,5 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import tailwindcss from "@tailwindcss/vite";
+import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
@@ -9,14 +9,19 @@ export default defineNuxtConfig({
   vite: {
     plugins: [
       tailwindcss(),
-    ]
+    ],
   },
   app: {
     head: {
       title: 'Tech Run 2025',
       meta: [
-        { name: 'description', content: 'Website theo dõi tiến độ Tech Run 2025 của Chiến dịch Hoa Phượng Đỏ PTNK' }
-      ]
-    }
-  }
+        { name: 'description', content: 'Website theo dõi tiến độ Tech Run 2025 của Chiến dịch Hoa Phượng Đỏ PTNK' },
+      ],
+    },
+  },
+  eslint: {
+    config: {
+      standalone: false,
+    },
+  },
 })

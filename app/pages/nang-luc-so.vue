@@ -1,9 +1,17 @@
+<script setup>
+const gameStore = useGameStore()
+</script>
+
 <template>
   <div class="p-4 pb-20">
     <!-- Header -->
     <div class="mb-6">
-      <h1 class="text-2xl font-bold text-gray-900 mb-2">Năng Lực Số</h1>
-      <p class="text-gray-600">Sử dụng các kỹ năng đặc biệt của bạn</p>
+      <h1 class="text-2xl font-bold text-gray-900 mb-2">
+        Năng Lực Số
+      </h1>
+      <p class="text-gray-600">
+        Sử dụng các kỹ năng đặc biệt của bạn
+      </p>
     </div>
 
     <!-- Skills Grid -->
@@ -16,7 +24,7 @@
               :src="skill.image"
               :alt="skill.title"
               class="w-full h-full object-cover"
-            />
+            >
           </div>
 
           <!-- Content -->
@@ -31,10 +39,10 @@
             <!-- Action Button -->
             <UButton
               v-if="!skill.used"
-              @click="gameStore.useSkill(skill.id)"
               size="xs"
               block
               class="bg-emerald-500 m-2 p-2 rounded-lg hover:cursor-pointer"
+              @click="gameStore.useSkill(skill.id)"
             >
               Sử Dụng
             </UButton>
@@ -59,16 +67,16 @@
           name="i-heroicons-star"
           class="w-8 h-8 text-blue-600 mx-auto mb-2"
         />
-        <p class="text-sm text-gray-600">Còn lại</p>
+        <p class="text-sm text-gray-600">
+          Còn lại
+        </p>
         <p class="text-xl font-bold text-gray-900">
           {{ gameStore.skillsCount }} năng lực số
         </p>
-        <p class="text-xs text-gray-500 mt-1">chưa sử dụng</p>
+        <p class="text-xs text-gray-500 mt-1">
+          chưa sử dụng
+        </p>
       </div>
     </UCard>
   </div>
 </template>
-
-<script setup>
-const gameStore = useGameStore();
-</script>
