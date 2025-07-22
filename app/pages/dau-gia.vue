@@ -45,7 +45,7 @@
       <!-- Bidding Section -->
       <UCard>
         <div class="space-y-4">
-          <h3 class="font-semibold text-gray-900">Đặt Giá Của Bạn</h3>
+          <h3 class="font-semibold text-gray-900">Giá Đặt Của Bạn</h3>
           
           <!-- Bid Input -->
           <UFormGroup label="Số tiền (VND)">
@@ -66,7 +66,7 @@
               size="sm"
               block
             >
-              +10k
+              +10K
             </UButton>
             <UButton 
               @click="addToBid(50000)"
@@ -74,7 +74,7 @@
               size="sm"
               block
             >
-              +50k
+              +50K
             </UButton>
             <UButton 
               @click="addToBid(100000)"
@@ -82,7 +82,7 @@
               size="sm"
               block
             >
-              +100k
+              +100K
             </UButton>
           </div>
 
@@ -92,7 +92,7 @@
             :disabled="!canBid"
             size="lg"
             block
-            color="primary"
+            class="bg-emerald-500 m-2 p-2 rounded-lg hover:cursor-pointer"
           >
             {{ gameStore.auctionItem.userBid > 0 ? 'Cập Nhật Giá' : 'Tham Gia Đấu Giá' }}
           </UButton>
@@ -124,13 +124,18 @@ const bidAmount = ref('')
 const timeLeft = ref(30)
 
 // Timer countdown
-const timer = setInterval(() => {
-  if (timeLeft.value > 0) {
-    timeLeft.value--
-  } else {
-    clearInterval(timer)
-  }
-}, 1000)
+const timer = undefined;
+
+onMounted(() => {
+  setInterval(() => {
+    if (timeLeft.value > 0) {
+      timeLeft.value--
+    } else {
+      clearInterval(timer)
+    }
+  }, 1000)
+
+})
 
 // Cleanup timer on unmount
 onUnmounted(() => {

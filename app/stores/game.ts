@@ -1,6 +1,6 @@
 export const useGameStore = defineStore('game', () => {
   // User stats
-  const coins = ref(2450)
+  const coins = ref(200000)
   const skillsCount = ref(8)
   const hintsCount = ref(3)
   

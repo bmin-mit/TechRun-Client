@@ -13,9 +13,9 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: 'Trò Chơi Địa Điểm',
+      title: 'Tech Run 2025',
       meta: [
-        { name: 'description', content: 'Website theo dõi tiến độ trò chơi địa điểm' }
+        { name: 'description', content: 'Website theo dõi tiến độ Tech Run 2025 của Chiến dịch Hoa Phượng Đỏ PTNK' }
       ]
     }
   }

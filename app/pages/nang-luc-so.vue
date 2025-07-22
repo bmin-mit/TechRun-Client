@@ -8,38 +8,38 @@
 
     <!-- Skills Grid -->
     <div class="grid grid-cols-2 gap-4">
-      <div 
-        v-for="skill in gameStore.skills" 
-        :key="skill.id"
-        class="relative"
-      >
+      <div v-for="skill in gameStore.skills" :key="skill.id" class="relative">
         <UCard :class="{ 'opacity-50': skill.used }">
           <!-- Vertical Credit Card Image -->
           <div class="aspect-[2/3] mb-3 overflow-hidden rounded-lg">
-            <img 
-              :src="skill.image" 
+            <img
+              :src="skill.image"
               :alt="skill.title"
               class="w-full h-full object-cover"
             />
           </div>
-          
+
           <!-- Content -->
-          <div class="space-y-2">
-            <h3 class="font-semibold text-gray-900 text-sm">{{ skill.title }}</h3>
-            <p class="text-xs text-gray-600 line-clamp-2">{{ skill.description }}</p>
-            
+          <div class="space-y-2 flex flex-col items-center justify-center">
+            <h3 class="font-semibold text-gray-900 text-sm w-full">
+              {{ skill.title }}
+            </h3>
+            <p class="text-xs text-gray-600 line-clamp-2 w-full">
+              {{ skill.description }}
+            </p>
+
             <!-- Action Button -->
-            <UButton 
+            <UButton
               v-if="!skill.used"
               @click="gameStore.useSkill(skill.id)"
               size="xs"
               block
-              color="primary"
+              class="bg-emerald-500 m-2 p-2 rounded-lg hover:cursor-pointer"
             >
               Sử Dụng
             </UButton>
-            
-            <UBadge 
+
+            <UBadge
               v-else
               color="gray"
               variant="soft"
@@ -55,9 +55,14 @@
     <!-- Summary -->
     <UCard class="mt-6">
       <div class="text-center">
-        <UIcon name="i-heroicons-star" class="w-8 h-8 text-blue-600 mx-auto mb-2" />
+        <UIcon
+          name="i-heroicons-star"
+          class="w-8 h-8 text-blue-600 mx-auto mb-2"
+        />
         <p class="text-sm text-gray-600">Còn lại</p>
-        <p class="text-xl font-bold text-gray-900">{{ gameStore.skillsCount }} năng lực số</p>
+        <p class="text-xl font-bold text-gray-900">
+          {{ gameStore.skillsCount }} năng lực số
+        </p>
         <p class="text-xs text-gray-500 mt-1">chưa sử dụng</p>
       </div>
     </UCard>
@@ -65,5 +70,5 @@
 </template>
 
 <script setup>
-const gameStore = useGameStore()
+const gameStore = useGameStore();
 </script>
