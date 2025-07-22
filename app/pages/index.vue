@@ -1,4 +1,6 @@
 <script setup>
+import { CircleDollarSign, MapPin, Puzzle, Star } from 'lucide-vue-next'
+
 const gameStore = useGameStore()
 </script>
 
@@ -17,66 +19,59 @@ const gameStore = useGameStore()
     <!-- Stats Cards -->
     <div class="space-y-4 mb-6">
       <!-- Coins -->
-      <UCard>
-        <div class="flex items-center justify-between">
-          <div class="flex items-center space-x-3">
-            <div class="p-3 bg-yellow-100 rounded-lg">
-              <CircleDollarSign class="w-8 h-8 text-yellow-600" />
-            </div>
-            <div>
-              <p class="text-sm text-gray-600">
-                Xu hiện tại
-              </p>
-              <p class="text-xl font-bold text-gray-900">
-                {{ gameStore.coins.toLocaleString() }}
-              </p>
-            </div>
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <div class="p-3 bg-yellow-100 rounded-lg">
+            <CircleDollarSign class="w-8 h-8 text-yellow-600" />
+          </div>
+          <div>
+            <p class="text-sm text-gray-600">
+              Xu hiện tại
+            </p>
+            <p class="text-xl font-bold text-gray-900">
+              {{ gameStore.coins.toLocaleString() }}
+            </p>
           </div>
         </div>
-      </UCard>
+      </div>
 
       <!-- Skills -->
-      <UCard>
-        <div class="flex items-center justify-between">
-          <div class="flex items-center space-x-3">
-            <div class="p-3 bg-blue-100 rounded-lg">
-              <UIcon name="i-heroicons-star" class="w-8 h-8 text-blue-600" />
-            </div>
-            <div>
-              <p class="text-sm text-gray-600">
-                Năng Lực Số
-              </p>
-              <p class="text-xl font-bold text-gray-900">
-                {{ gameStore.skillsCount }}
-                <span class="text-sm font-normal text-gray-500">chưa sử dụng</span>
-              </p>
-            </div>
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <div class="p-3 bg-blue-100 rounded-lg">
+            <Star class="w-8 h-8 text-blue-600" />
+          </div>
+          <div>
+            <p class="text-sm text-gray-600">
+              Năng Lực Số
+            </p>
+            <p class="text-xl font-bold text-gray-900">
+              {{ gameStore.skillsCount }}
+              <span class="text-sm font-normal text-gray-500">chưa sử dụng</span>
+            </p>
           </div>
         </div>
-      </UCard>
+      </div>
 
       <!-- Hints -->
-      <UCard>
-        <div class="flex items-center justify-between">
-          <div class="flex items-center space-x-3">
-            <div class="p-3 bg-green-100 rounded-lg">
-              <UIcon
-                name="i-heroicons-puzzle-piece"
-                class="w-8 h-8 text-green-600"
-              />
-            </div>
-            <div>
-              <p class="text-sm text-gray-600">
-                Mảnh Dữ Liệu
-              </p>
-              <p class="text-xl font-bold text-gray-900">
-                {{ gameStore.hintsCount }}
-                <span class="text-sm font-normal text-gray-500">đã thu thập</span>
-              </p>
-            </div>
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <div class="p-3 bg-green-100 rounded-lg">
+            <Puzzle
+              class="w-8 h-8 text-green-600"
+            />
+          </div>
+          <div>
+            <p class="text-sm text-gray-600">
+              Mảnh Dữ Liệu
+            </p>
+            <p class="text-xl font-bold text-gray-900">
+              {{ gameStore.hintsCount }}
+              <span class="text-sm font-normal text-gray-500">đã thu thập</span>
+            </p>
           </div>
         </div>
-      </UCard>
+      </div>
     </div>
 
     <!-- Quick Actions -->
@@ -93,14 +88,14 @@ const gameStore = useGameStore()
         :trailing="false"
       >
         <template #leading>
-          <UIcon name="i-heroicons-star" />
+          <Star />
         </template>
         Sử Dụng Năng Lực Số
       </UButton>
 
       <UButton to="/tram" variant="outline" size="lg" block :trailing="false">
         <template #leading>
-          <UIcon name="i-heroicons-map-pin" />
+          <MapPin />
         </template>
         Xem Bản Đồ Trạm
       </UButton>
@@ -113,7 +108,7 @@ const gameStore = useGameStore()
         :trailing="false"
       >
         <template #leading>
-          <UIcon name="i-heroicons-currency-dollar" />
+          <CircleDollarSign />
         </template>
         Tham Gia Đấu Giá
       </UButton>
